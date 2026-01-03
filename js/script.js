@@ -287,7 +287,7 @@
 
 
 
-let number = [1,2,3,4,5,6,6];
+// let number = [1,2,3,4,5,6,6];
 
-let numberReplaced = number.map(items => items + 2);
-console.log(numberReplaced);
+// let numberReplaced = number.map(items => items + 2);
+// console.log(numberReplaced);
