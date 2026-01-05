@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="Firstname">First Name : </label>
+    <input type="text" id="firstname" placeholder="Enter first Name">
+    <br>
+
+    <label for="Secondname">Second Name:</label>
+    <input type="text" id="secondname" placeholder="Enter second Name">
+    <br>
+
+    <label for="phoneNo">Phone no:</label>
+    <input type="number" id="Phone1" placeholder="Enter phone">
+    <br>
+
+    <label for="email"> Email:</label>
+    <input type="email" id="email1" placeholder="Enter email">
+    <br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password1" placeholder="Enter Password">
+    <br>
+
+    <button id="show-input" onClick="detail()">Show Input</button>
+    <br>
+
+    <p id="displayfirstname"></p>
+    <p id="displaylastname"></p>
+    <p id="displayphone"></p>
+    <p id="displayemail"></p>
+    <p id="displaypassword"></p>
+    <h1 id="error" style="color: red;"></h1>
+</body>
+<script>
+    function detail(){
+        let firstName = document.getElementById('firstname').value
+        let secondName = document.getElementById('secondname').value
+        let phoneNumeber = document.getElementById('Phone1').value
+        let email = document.getElementById('email1').value
+        let password = document.getElementById('password1').value
+
+        console.log(firstName,secondName,phoneNumeber,email,password);
+        console.log(phoneNumeber.length);
+
+
+        if(!email.includes('@')){
+            document.getElementById('error').innerHTML = "Include @ in gmail";
+        }
+        else if(phoneNumeber.length < 10){
+            document.getElementById('error').innerHTML = "Phone no should be 10 digits";
+        }
+        else if(password.length < 8){
+            document.getElementById('error').innerHTML = "Password should be greater than 8 characters";
+        }
+        else {
+        document.getElementById('displayfirstname').innerHTML = firstName;
+        document.getElementById('displaylastname').innerHTML = secondName;
+        document.getElementById('displayphone').innerHTML = phoneNumeber;
+        document.getElementById('displayemail').innerHTML = email;
+        document.getElementById('displaypassword').innerHTML = password;
+        }
+        
+
+        
+    }
+
+
+</script>
+</html>

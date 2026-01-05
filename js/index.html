@@ -6,8 +6,31 @@
     <title>Document</title>
 </head>
 <body>
-    <script src="script.js">
-        
+
+    <form>
+        <input placeholder="Enter email" id="email" type="text">
+        <input placeholder="enter passworrd" id="pass" type="password">
+
+        <input placeholder="Enter password again" type="password">
+
+        <button onClick="show()" id="col">Show</button>
+        <p id="emailShow"></p>
+        <p id="passShow"></p>
+    </form>
+    <script>
+
+        function show(){
+            const email = document.getElementById('email').value
+            const pass = document.getElementById('pass').value
+            console.log(email,pass)
+            document.getElementById("emailShow").innerHTML = email;
+            document.getElementById("passShow").innerHTML = pass;   
+
+            document.getElementById("col").style.backgroundColor = 'red'
+            document.getElementById("col").style.paddingLeft = "10px";
+            document.getElementById("col").style.paddingRight = '10px';
+        }
+
     </script>
 </body>
 </html>
