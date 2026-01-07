@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="font-Atkinson">
+    <div
+      class="flex flex-col justify-center items-center h-screen gap-6 text-white bg-black"
+    >
+      <p id="datee" class="text-2xl mb-2"></p>
+
+      <div class="flex items-center gap-3 text-6xl">
+        <button id="hrs" class="p-10 bg-zinc-950 border rounded-2xl"></button> :
+        <button id="mts" class="p-10 bg-zinc-950 border rounded-2xl"></button> :
+        <button id="sec" class="p-10 bg-zinc-950 border rounded-2xl"></button>
+      </div>
+    </div>
+  </body>
+  <script>
+    setInterval(() => {
+      let time = new Date();
+      let hour = String(time.getHours()).padStart(2, 0);
+      let minute = String(time.getMinutes()).padStart(2, 0);
+      let second = String(time.getSeconds()).padStart(2, 0);
+      let fullDate = time.toLocaleDateString("en-US", {
+        month: "short",
+        day: "2-digit",
+        year: "numeric",
+      });
+      console.log(fullDate);
+      document.getElementById("hrs").innerHTML = hour;
+      document.getElementById("mts").innerHTML = minute;
+      document.getElementById("sec").innerHTML = second;
+      document.getElementById("datee").innerHTML = fullDate;
+
+      console.log(hour, minute, second);
+    }, 1000);
+  </script>
+</html>
