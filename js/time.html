@@ -35,6 +35,11 @@
         day: "2-digit",
         year: "numeric",
       });
+
+      console.log(hour);
+      if(hour > 12){
+        hour = hour - 12;
+      }
       console.log(fullDate);
       document.getElementById("hrs").innerHTML = hour;
       document.getElementById("mts").innerHTML = minute;

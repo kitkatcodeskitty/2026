@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+  <body>
+    <div class="bg-black h-[90vh] relative" id="parent">
+      <div class=" h-20 w-20  transform transition-rotate duration-1000   absolute bg-[url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] z-2 bg-cover bg-center" id="ball"></div>
+      <!-- <div class="bg-pink-500 h-5 w-5 rounded-full absolute" id="pink"></div>
+      <div
+        class="bg-orange-500 h-5 w-5 rounded-full absolute"
+        id="orange"
+      ></div>
+      <div
+        class="bg-yellow-500 h-5 w-5 rounded-full absolute"
+        id="yellow"
+      ></div> -->
+    </div>
+  </body>
+  <script>
+    const bl = document.getElementById("parent");
+    const circle = document.getElementById("ball");
+    const pinkS = document.getElementById("pink");
+    const orangeS = document.getElementById("orange");
+    const yellowS = document.getElementById("yellow");
+
+    bl.addEventListener("mousemove", (e) => {
+      console.log(e.x);
+      console.log(e.y);
+      circle.style.top = `${e.y - 20}px`;
+      circle.style.left = `${e.x - 20}px`;
+
+    //   pinkS.style.top = `${e.y - 20}px`;
+    //   pinkS.style.left = `${e.x - 20}px`;
+
+    //   orangeS.style.top = `${e.y - 30}px`;
+    //   orangeS.style.left = `${e.x - 30}px`;
+
+    //   yellowS.style.top = `${e.y - 40}px`;
+    //   yellowS.style.left = `${e.x - 40}px`;
+    });
+  </script>
+</html>
+
+
+
+
+
+<!-- click , mousemove, input, submit , reset, keydown, dblclick, scroll, load,change -->
