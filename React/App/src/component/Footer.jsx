@@ -39,9 +39,9 @@ function Footer() {
           <div>
             <p className="text-neutral-500 mb-3">Main page</p>
             <div className="flex flex-col gap-3">
-              <a href="">Home</a>
-              <a href="">About</a>
-              <a href="">Contact</a>
+              <a href="/">Home</a>
+              <a href="/about">About</a>
+              <a href="/contact">Contact</a>
             </div>
           </div>
 
