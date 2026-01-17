@@ -41,7 +41,7 @@ function About (){
                 <button className="border py-2 px-4 bg-white text-black border-black  mx-5" onClick={clicked}>{message}</button>
             </div>
 
-git 
+2
 
 
             <div className={`flex justify-evenly p-5 m-5 ${bgcolor}`}>
