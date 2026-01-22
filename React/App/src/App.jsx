@@ -6,6 +6,9 @@ import Contact from './pages/Contact.jsx';
 import Footer from './component/Footer.jsx';
 import About from './pages/About.jsx'
 import Friend from './pages/Friend.jsx';
+import Tabs from './pages/Tabs.jsx';
+import AsyncFun from './pages/Async.jsx';
+
 
 
 function App() {
@@ -18,7 +21,8 @@ function App() {
         <Route path="/contact" element={<Contact/>} />
         <Route path="/about" element={<About />} />
         <Route path="/friend" element={<Friend />} />
-    
+        <Route path="/tabs" element={<Tabs />} />
+        <Route path="/async" element={<AsyncFun />} />
       </Routes>
       <Footer />
     </BrowserRouter>
