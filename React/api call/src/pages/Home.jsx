@@ -1,7 +1,7 @@
 function Home(){
     return(
         <>
-        <div>This is home</div>
+        <div className="px-10">This is home</div>
         </>
     )
 }

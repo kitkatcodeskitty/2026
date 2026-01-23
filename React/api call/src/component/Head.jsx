@@ -1,30 +1,43 @@
-import { CiShoppingCart } from "react-icons/ci";
+import { useState } from "react";
 import { RiBarChartHorizontalLine } from "react-icons/ri";
-import { PiLineVertical } from "react-icons/pi";
 
 function Head() {
+  const [open, setOpen] = useState(false);
+
   return (
-    <div className="px-10 py-5 flex items-center text-black  w-full justify-between">
+    <header className="px-6 py-4 flex items-center justify-between w-full bg-white shadow-md">
       
+      {/* Logo */}
+      <a href="/" className="font-bold text-2xl md:text-4xl">
+        API Showcase
+      </a>
 
-      <div className="flex flex-1 items-center gap-2">
-        <RiBarChartHorizontalLine size={20} />
-        <PiLineVertical size={20} />
-        <CiShoppingCart size={20} />
-      </div>
+      {/* Desktop Menu */}
+      <nav className="hidden md:flex gap-6 text-lg">
+        <a href="/user" className="hover:text-blue-500">User</a>
+        <a href="/albums" className="hover:text-blue-500">Albums</a>
+        <a href="/photo" className="hover:text-blue-500">Photo</a>
+        <a href="/post" className="hover:text-blue-500">Post</a>
+      </nav>
 
+      {/* Mobile Menu Button */}
+      <button
+        className="md:hidden text-3xl"
+        onClick={() => setOpen(!open)}
+      >
+        <RiBarChartHorizontalLine />
+      </button>
 
-      <div className="flex flex-1 justify-center font-sans">
-        <a href="/" className="font-light text-4xl">
-          ActiviTee
-        </a>
-      </div>
-
-      <div className="flex flex-1 justify-end gap-3">
-        <a href="/contact">Contact</a>
-      </div>
-
-    </div>
+      {/* Mobile Menu */}
+      {open && (
+        <div className="absolute top-16 left-0 w-full bg-white shadow-lg flex flex-col px-8 gap-4 py-6 md:hidden">
+          <a href="/user" onClick={() => setOpen(false)}>User</a>
+          <a href="/albums" onClick={() => setOpen(false)}>Albums</a>
+          <a href="/photo" onClick={() => setOpen(false)}>Photo</a>
+          <a href="/post" onClick={() => setOpen(false)}>Post</a>
+        </div>
+      )}
+    </header>
   );
 }
 

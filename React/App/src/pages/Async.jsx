@@ -5,7 +5,7 @@ function Async() {
   const [users, setUsers] = useState([]);
 
   const handler = async () => {
-    const res = await axios.get("https://jsonplaceholder.typicode.com/users");
+    const res = await axios.get("https://jsonplaceholder.typicode.com/users?_limit=10");
     setUsers(res.data);
   };
 
