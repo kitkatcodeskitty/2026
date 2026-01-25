@@ -64,7 +64,7 @@ function Footer() {
           </div>
 
           <div>
-            <p className="text-neutral-500 mb-3">Utility page</p>
+            <p className="text- mb-3">Utility page</p>
             <div className="flex flex-col gap-3">
               <a href="">404 not found</a>
               <a href="">Changelog</a>
