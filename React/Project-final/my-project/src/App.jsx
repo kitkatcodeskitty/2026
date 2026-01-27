@@ -6,6 +6,7 @@ import User from './pages/User.jsx';
 import Profile from './pages/Profile.jsx'
 import Post from './pages/Post.jsx'
 import Albums from './pages/albums.jsx'
+import Photo from './pages/Photo.jsx';
 function App() {
 
 
@@ -19,6 +20,7 @@ function App() {
         <Route path="/user/:id" element={<Profile />} />
         <Route path="/post" element={<Post />} />
         <Route path="/albums" element={<Albums />} />
+        <Route path="/photo" element={<Photo />} /> 
       </Routes>
       <Footer />
       </BrowserRouter>
