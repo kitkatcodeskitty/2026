@@ -36,7 +36,7 @@ function Post() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {post.map((postItem) => {
+        {post.slice(0,30).map((postItem) => {
           return (
             <div
               key={postItem.id}
@@ -47,7 +47,7 @@ function Post() {
                 By {getUserName(postItem.userId)}
               </p>
               <p className="text-sm text-gray-600 mb-4 flex-grow">{postItem.body}</p>
-              <button className="w-full py-2 rounded-lg bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 transition-colors"><a href={`user/${postItem.userId}`}>View Profile</a></button>
+              <button className="w-full py-2 rounded-lg bg-[#F5AFAF] text-white text-sm font-medium hover:bg-[#de7a7a] transition-colors"><a href={`user/${postItem.userId}`}>View Profile</a></button>
             </div>
           );
         })}

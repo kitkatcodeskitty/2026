@@ -37,7 +37,7 @@ function albums() {
         <p className="text-gray-500">Browse all albums</p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {albums.map((item) => {
+        {albums.slice(0,30).map((item) => {
           return (
             <div
               key={item.id}

@@ -42,26 +42,26 @@ function Profile() {
 
   return (
     <div className="max-w-6xl mx-auto px-6 py-8">
-      <div className="h-32 w-full bg-gradient-to-r from-blue-600 to-blue-400 rounded-lg mb-6"></div>
+      <div className="h-32 w-full bg-linear-to-r from-[#ffb7b7] to-[#383fc8] rounded-lg mb-6"></div>
 
       <div className="bg-white border border-gray-200 rounded-lg p-6 mb-8">
         <div className="flex gap-6 flex-wrap items-start">
-          <div className="h-24 w-24 bg-center bg-cover rounded-full bg-[url('https://i.pinimg.com/736x/2f/94/92/2f9492c780975bb745d8ecb03c4d4f53.jpg')] flex-shrink-0"></div>
+          <div className="h-24 w-24 bg-center bg-cover rounded-full bg-[url('https://i.pinimg.com/736x/d0/f2/8e/d0f28e75f32f7c0334698787d31b2628.jpg')] shrink-0"></div>
           <div className="flex-1 min-w-0">
             <h2 className="text-2xl font-semibold text-gray-900">{user.name}</h2>
             <p className="text-gray-500 text-sm mb-4">@{user.username}</p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3">
               <div className="flex items-center gap-2 text-sm text-gray-600">
-                <MdEmail className="flex-shrink-0" />
+                <MdEmail className="shrink-0" />
                 <p className="truncate">{user.email}</p>
               </div>
               <div className="flex items-center gap-2 text-sm text-gray-600">
-                <FaPhoneAlt className="flex-shrink-0" />
+                <FaPhoneAlt className="shrink-0" />
                 <p>{user.phone}</p>
               </div>
               <div className="flex items-center gap-2 text-sm text-gray-600">
-                <CiGlobe className="flex-shrink-0" />
+                <CiGlobe className="shrink-0" />
                 <a href={`https://${user.website}`} className="text-blue-600 hover:text-blue-700 truncate">
                   {user.website}
                 </a>

@@ -49,7 +49,7 @@ function User() {
               </p>
             </div>
             <button
-              className="w-full py-2 rounded-lg bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 transition-colors"
+              className="w-full py-2 rounded-lg bg-[#F5AFAF] text-white text-sm font-medium hover:bg-[#de7a7a] transition-colors"
               onClick={() => navigate(`/user/${user.id}`)}
             >
               View Profile
