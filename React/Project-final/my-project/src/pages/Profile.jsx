@@ -67,13 +67,13 @@ function Profile() {
                 </a>
               </div>
               <div className="flex items-center gap-2 text-sm text-gray-600">
-                <CiLocationOn className="flex-shrink-0" />
+                <CiLocationOn className="shrink-0" />
                 <p className="truncate">
                   {user.address?.city}, {user.address?.street}
                 </p>
               </div>
               <div className="flex items-center gap-2 text-sm text-gray-600">
-                <GoOrganization className="flex-shrink-0" />
+                <GoOrganization className="shrink-0" />
                 <p className="truncate">{user.company?.name}</p>
               </div>
             </div>

@@ -53,7 +53,7 @@ function Home() {
         <p className="text-gray-500">Overview of all your data at a glance</p>
       </div>
 
-      <div className="mb-8 ">
+      <div className="my-9 ">
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-3">
             <FaUser size={20} className="text-gray-600" />
@@ -64,7 +64,7 @@ function Home() {
           </div>
           <a
             href="/user"
-            className="text-sm text-[#F5AFAF] hover:text-[#de7a7a]"
+            className="text-sm text-[#F5AFAF] hover:text-[#ffff] border hover:border-non px-5 py-2 hover:bg-[#F5AFAF] "
           >
             View all →
           </a>
@@ -78,20 +78,20 @@ function Home() {
               key={user.id}
               className="bg-white border border-gray-200 rounded-lg p-5 hover:shadow-md transition-shadow"
             >
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">
+              <h3 className="text-lg font-semibold text-gray-900 ">
                 {user.name}
               </h3>
               <div className="space-y-1 mb-4">
-                <p className="text-sm text-gray-600">@{user.username}</p>
-                <p className="text-sm text-gray-600">{user.email}</p>
-                <p className="text-sm text-gray-600">{user.phone}</p>
-                <p className="text-sm text-gray-600">{user.website}</p>
+                <p className="text-sm text-gray-600 mb-3">@{user.username}</p>
+                <p className="text-sm text-gray-600">Email: {user.email}</p>
+                <p className="text-sm text-gray-600">Phone: {user.phone}</p>
+                <p className="text-sm text-gray-600">Website: {user.website}</p>
               </div>
             </div>
           ))}
       </div>
 
-      <div className="mb-8 ">
+      <div className="my-9 ">
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-3">
             <BsPostcardHeartFill size={24} className="text-gray-400" />
@@ -102,7 +102,7 @@ function Home() {
           </div>
           <a
             href="/post"
-            className="text-sm text-[#F5AFAF] hover:text-[#de7a7a]"
+            className="text-sm text-[#F5AFAF] hover:text-[#ffff]  border hover:border-non px-5 py-2 hover:bg-[#F5AFAF]"
           >
             View all →
           </a>
@@ -132,7 +132,7 @@ function Home() {
       </div>
 
       {/* Albumms walal yeha xa  */}
-      <div className="my-3">
+      <div className="my-9">
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-3">
             <IoIosAlbums size={24} className="text-gray-400" />
@@ -145,7 +145,7 @@ function Home() {
           </div>
           <a
             href="/albums"
-            className="text-sm text-[#F5AFAF] hover:text-[#de7a7a]"
+            className="text-sm text-[#F5AFAF] hover:text-[#ffffff] border hover:border-non   px-5 py-2 hover:bg-[#F5AFAF]"
           >
             View all →
           </a>
@@ -171,7 +171,7 @@ function Home() {
         </div>
       </div>
 
-      <div className="my-3">
+      <div className="my-9">
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-3">
             <IoMdPhotos size={24} className="text-gray-400" />
@@ -184,7 +184,7 @@ function Home() {
           </div>
           <a
             href="/photo"
-            className="text-sm text-[#F5AFAF] hover:text-[#de7a7a]"
+            className="text-sm text-[#F5AFAF] hover:text-white border hover:border-non px-5 py-2 hover:bg-[#F5AFAF]"
           >
             View all →
           </a>
