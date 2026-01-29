@@ -16,6 +16,11 @@ function User() {
      
   };
 
+  const getUserName = (userId) => {
+    const foundUser = users.find((u) => u.id === userId);
+    return foundUser ? foundUser.name : "Loading";
+  };
+
   useEffect(() => {
     handler();
   }, []);

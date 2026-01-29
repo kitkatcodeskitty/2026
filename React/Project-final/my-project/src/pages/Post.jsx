@@ -1,28 +1,25 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { FaUser } from "react-icons/fa";
+  
+
+import { Link } from "react-router-dom";
 
 function Post() {
   const [post, setPost] = useState([]);
-  const [user, setUser] = useState([]);
+  const [users, setUsers] = useState([]);
 
   const handle = async () => {
-    const respondPost = await axios.get(
-      "https://jsonplaceholder.typicode.com/posts",
-    );
+    const respondPost = await axios.get("https://jsonplaceholder.typicode.com/posts");
     setPost(respondPost.data);
-    console.log(respondPost.data);
-    const respondUser = await axios.get(
-      `https://jsonplaceholder.typicode.com/users`,
-    );
-    setUser(respondUser.data);
-    console.log(respondUser.data);
+
+    const respondUser = await axios.get("https://jsonplaceholder.typicode.com/users");
+    setUsers(respondUser.data);
   };
 
-  console.log("user id", user.id);
   const getUserName = (userId) => {
-    const foundUser = user.find((u) => u.id === userId);
-    return foundUser ? foundUser.name : "Loading";
+    const foundUser = users.find((u) => u.id === userId);
+    return foundUser ? foundUser.name : "";
   };
 
   useEffect(() => {
@@ -37,33 +34,31 @@ function Post() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {post.slice(0, 30).map((postItem) => {
-          return (
-            <div
-              key={postItem.id}
-              className="bg-white border border-gray-200 rounded-lg p-5 hover:shadow-md transition-shadow flex flex-col"
+        {post.slice(0, 30).map((postItem) => (
+          <div
+            key={postItem.id}
+            className="bg-white border border-gray-200 rounded-lg p-5 hover:shadow-md transition-shadow flex flex-col"
+          >
+            <h1 className="text-lg font-semibold text-gray-900 mb-2">{postItem.title}</h1>
+            <p className="text-sm text-gray-600 mb-4 flex-grow">{postItem.body}</p>
+
+            <p className="text-xs text-gray-500 mb-3">
+              <Link
+                to={`/user/${postItem.userId}`}
+                className="text-sm text-[#282829] hover:text-[#3b43dd] ml-auto flex items-center"
+              >
+                <FaUser size={14} /> {getUserName(postItem.userId)}
+              </Link>
+            </p>
+
+            <Link
+              to={`/post/${postItem.id}`}
+              className="w-full py-2 rounded-lg bg-blue-500 text-white text-sm font-medium hover:bg-blue-800 transition-colors text-center"
             >
-              <h1 className="text-lg font-semibold text-gray-900 mb-2">
-                {postItem.title}
-              </h1>
-              <p className="text-sm text-gray-600 mb-4 flex-grow">
-                {postItem.body}
-              </p>
-              <p className="text-xs text-gray-500 mb-3 ">
-                
-                <a
-                  href={`user/${postItem.userId}`}
-                  className="text-sm text-[#282829] hover:text-[#3b43dd] ml-auto flex items-center"
-                >
-                  <FaUser size={14} /> {getUserName(postItem.userId)}
-                </a>
-              </p>
-              <button className="w-full py-2 rounded-lg bg-[#F5AFAF] text-white text-sm font-medium hover:bg-[#de7a7a] transition-colors">
-                <a href={`post/${postItem.id}`}>View Post</a>
-              </button>
-            </div>
-          );
-        })}
+              View Post
+            </Link>
+          </div>
+        ))}
       </div>
     </div>
   );

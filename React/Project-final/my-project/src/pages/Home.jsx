@@ -4,7 +4,13 @@ import { IoIosAlbums } from "react-icons/io";
 import { IoMdPhotos } from "react-icons/io";
 import { useState, useEffect } from "react";
 import { MdOutlineQueryStats } from "react-icons/md";
-import {  FaFileAlt, FaImages, FaCamera, FaArrowRight, FaChartLine } from "react-icons/fa";
+import {
+  FaFileAlt,
+  FaImages,
+  FaCamera,
+  FaArrowRight,
+  FaChartLine,
+} from "react-icons/fa";
 
 import { FaUser } from "react-icons/fa";
 import axios from "axios";
@@ -62,56 +68,74 @@ function Home() {
         </div>
       </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-          <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-            <div className="flex items-center justify-between mb-4">
-              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                <FaUser className="text-blue-600" size={20} />
-              </div>
-              <span className="text-xs font-medium text-green-600 bg-green-50 px-2 py-1 rounded-full">Active</span>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+          <div className="flex items-center justify-between mb-4">
+            <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+              <FaUser className="text-blue-600" size={20} />
             </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-1">{user.length}</h3>
-            <p className="text-sm text-gray-600">Total Users</p>
+            <span className="text-xs font-medium text-green-600 bg-green-50 px-2 py-1 rounded-full">
+              Active
+            </span>
           </div>
-
-          <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-            <div className="flex items-center justify-between mb-4">
-              <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
-                <FaFileAlt className="text-purple-600" size={20} />
-              </div>
-              <span className="text-xs font-medium text-blue-600 bg-blue-50 px-2 py-1 rounded-full">Published</span>
-            </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-1">{post.length}</h3>
-            <p className="text-sm text-gray-600">Total Posts</p>
-          </div>
-
-          <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-            <div className="flex items-center justify-between mb-4">
-              <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
-                <FaImages className="text-green-600" size={20} />
-              </div>
-              <span className="text-xs font-medium text-purple-600 bg-purple-50 px-2 py-1 rounded-full">Collections</span>
-            </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-1">{albums.length}</h3>
-            <p className="text-sm text-gray-600">Total Albums</p>
-          </div>
-
-          <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
-            <div className="flex items-center justify-between mb-4">
-              <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
-                <FaCamera className="text-orange-600" size={20} />
-              </div>
-              <span className="text-xs font-medium text-orange-600 bg-orange-50 px-2 py-1 rounded-full">Media</span>
-            </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-1">{photo.length}</h3>
-            <p className="text-sm text-gray-600">Total Photos</p>
-          </div>
+          <h3 className="text-2xl font-bold text-gray-900 mb-1">
+            {user.length}
+          </h3>
+          <p className="text-sm text-gray-600">Total Users</p>
         </div>
+
+        <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+          <div className="flex items-center justify-between mb-4">
+            <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+              <FaFileAlt className="text-purple-600" size={20} />
+            </div>
+            <span className="text-xs font-medium text-blue-600 bg-blue-50 px-2 py-1 rounded-full">
+              Published
+            </span>
+          </div>
+          <h3 className="text-2xl font-bold text-gray-900 mb-1">
+            {post.length}
+          </h3>
+          <p className="text-sm text-gray-600">Total Posts</p>
+        </div>
+
+        <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+          <div className="flex items-center justify-between mb-4">
+            <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+              <FaImages className="text-green-600" size={20} />
+            </div>
+            <span className="text-xs font-medium text-purple-600 bg-purple-50 px-2 py-1 rounded-full">
+              Collections
+            </span>
+          </div>
+          <h3 className="text-2xl font-bold text-gray-900 mb-1">
+            {albums.length}
+          </h3>
+          <p className="text-sm text-gray-600">Total Albums</p>
+        </div>
+
+        <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+          <div className="flex items-center justify-between mb-4">
+            <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
+              <FaCamera className="text-orange-600" size={20} />
+            </div>
+            <span className="text-xs font-medium text-orange-600 bg-orange-50 px-2 py-1 rounded-full">
+              Media
+            </span>
+          </div>
+          <h3 className="text-2xl font-bold text-gray-900 mb-1">
+            {photo.length}
+          </h3>
+          <p className="text-sm text-gray-600">Total Photos</p>
+        </div>
+      </div>
 
       <div className="my-9 ">
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-3">
-            <FaUser size={20} className="text-gray-600" />
+            <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+              <FaUser className="text-blue-600" size={20} />
+            </div>
             <div>
               <h2 className="font-semibold text-lg text-gray-900">Users</h2>
               <p className="text-sm text-gray-500">{user.length} Total users</p>
@@ -149,7 +173,9 @@ function Home() {
       <div className="my-9 ">
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-3">
-            <BsPostcardHeartFill size={24} className="text-gray-400" />
+            <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+              <FaFileAlt className="text-purple-600" size={20} />
+            </div>
             <div>
               <h2 className="font-semibold text-lg text-gray-900">Posts</h2>
               <p className="text-sm text-gray-500">{post.length} Total posts</p>
@@ -171,9 +197,15 @@ function Home() {
                   key={postItem.id}
                   className="bg-white border border-gray-200 rounded-lg p-5 hover:shadow-md transition-shadow flex flex-col"
                 >
-                  <h1 className="text-lg font-semibold text-gray-900 mb-2">
-                    {postItem.title}
-                  </h1>
+                  <a
+                    href={`post/${postItem.id}`}
+                    className="hover:text-blue-500"
+                  >
+                    <h1 className="text-lg font-semibold text-gray-900 mb-2 hover:text-purple-500">
+                      {postItem.title}
+                    </h1>
+                  </a>
+
                   <p className="text-xs text-gray-500 mb-3">
                     By {getUserName(postItem.userId)}
                   </p>
@@ -190,7 +222,9 @@ function Home() {
       <div className="my-9">
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-3">
-            <IoIosAlbums size={24} className="text-gray-400" />
+            <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+              <FaImages className="text-green-600" size={20} />
+            </div>
             <div>
               <h2 className="font-semibold text-lg text-gray-900">Albums</h2>
               <p className="text-sm text-gray-500">
@@ -229,7 +263,9 @@ function Home() {
       <div className="my-9">
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-3">
-            <IoMdPhotos size={24} className="text-gray-400" />
+            <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
+              <FaCamera className="text-orange-600" size={20} />
+            </div>
             <div>
               <h2 className="font-semibold text-lg text-gray-900">Photos</h2>
               <p className="text-sm text-gray-500">
